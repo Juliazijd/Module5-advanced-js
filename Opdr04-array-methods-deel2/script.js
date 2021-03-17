@@ -9,7 +9,6 @@ console.log(superheroes.find(findSpiderMan));
   // result: {name: "Spiderman", alter_ego: "Peter Parker"}
 
 //B
-
 const doubleArrayValues = array => array.map(x => x * 2);
 console.log(doubleArrayValues([1, 2, 3])); 
 // result: [2, 4, 6]
