@@ -106,17 +106,16 @@ const superheroes = [
 }
 ]
 // 1. Maak array met alle superhelden namen:
-const displayAllSuperheroNames = items => items.map((item) => {
+const names = superheroes.map(item => {
   return item.name;
-})
-console.log(displayAllSuperheroNames(superheroes));
+});
+console.log(names);
 // result: ["Batman", "Superman", "Flash", "Green Lantern", "Green Arrow", "Wonder Woman", "Blue Beetle", "Spider Man", "Captain America", "Iron Man", "Thor", "Hulk", "Wolverine", "Daredevil", "Silver Surfer"]
 
 
 // 2. Maak een array van alle superhelden onder de 190 pounds:
-const displaySuperheroesUnder190 = items => items.filter((item) => {
-  return item.weight < 190});
-console.log(displaySuperheroesUnder190(superheroes));
+const lightWeights = superheroes.filter(item => item.weight < 190);
+console.log(lightWeights);
 //result:
 //0: {name: "Green Lantern", publisher: "DC Comics", alter_ego: "Alan Scott", first_appearance: "All-American Comics #16", weight: "186"}
 //1: {name: "Wonder Woman", publisher: "DC Comics", alter_ego: "Princess Diana", first_appearance: "The Incredible Hulk #180", weight: "165"}
@@ -124,47 +123,42 @@ console.log(displaySuperheroesUnder190(superheroes));
 //3: {name: "Spider Man", publisher: "Marvel Comics", alter_ego: "Peter Parker", first_appearance: "Amazing Fantasy #15", weight: "167"}
 
 // 3. Maak een array met de namen van de superhelden die 200 pounds wegen:
-const display200PoundSuperheroes = items => (items.filter((item) => {
-  return item.weight == 200
-  })).map((item) => {
+const hero200 = superheroes.filter(item => item.weight == 200).map(item => {
   return item.name
 });
-console.log(display200PoundSuperheroes(superheroes));
+console.log(hero200);
 //result: ["Thor", "Wolverine", "Daredevil"]
 
 
 // 4. Maak een array met alle comics waar superhelden hun first appearances hebben gehad:
-const displayFirstAppearances = items => items.map((item)=> {
-  return item.first_appearance
-});
-console.log(displayFirstAppearances(superheroes));
+const firstAppearance = superheroes.map(item => item.first_appearance);
+console.log(firstAppearance);
 
 
 // 5. Maak array met alle DC Comics superhelden en met alle Marvel Comics superhelden:
-const displayDCComicsSuperheroes = items => items.filter((item) => {
-  return item.publisher == "DC Comics"
-});
-const displayMarvelComicsSuperheroes = items => items.filter((item) => {
-  return item.publisher == "Marvel Comics"
-});
-console.log(displayDCComicsSuperheroes(superheroes));
-console.log(displayMarvelComicsSuperheroes(superheroes));
+const heroesDC = superheroes.filter(item => item.publisher == "DC Comics");
+const heroesMarvel = superheroes.filter(item => item.publisher == "Marvel Comics");
+console.log(heroesDC);
+console.log(heroesMarvel);
 
 // 6. Tel het gewicht van alle DC superheroes bij elkaar op:
-const sumOfWeightDCSuperheroes = items => (
-  (items.filter((item) => item.publisher == "DC Comics")
-  .map((item) => item.weight)
-  .map(Number)).reduce((total, item) => {
-    return item + total;
-  }));
-console.log(sumOfWeightDCSuperheroes(superheroes));
+const weightHeroesDC = heroesDC.map(item => item.weight).map(Number).reduce((total, item) => {
+  return item + total
+});
+console.log(weightHeroesDC);
 
 // 7. Tel het gewicht van alle Marvel superheroes bij elkaar op:
-const sumOfWeightMarvelSuperheroes = items => 
-  (items.filter((item) => item.publisher == "Marvel Comics")
-  .map((item) => item.weight)
-  .map(Number));
-console.log(sumOfWeightMarvelSuperheroes(superheroes));
+const weightHeroes = heroesMarvel.map(item => {
+  if (item.weight !== "unknown") {
+    return parseInt(item.weight);
+  } else {
+    return 0;
+  }
+})
+const totalMarvelWeight = weightHeroes.reduce((total, item) => {
+  return total + item
+});
+console.log(totalMarvelWeight);
 
 // 8. 
 const displayHighestWeight = items => {
