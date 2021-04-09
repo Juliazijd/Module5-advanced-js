@@ -16,8 +16,10 @@ const displayMyTopMovie = data => {
 }
 const createTopRatedList = (movies, li) => {
     const topRatedMovies = movies.results;
+ 
     const movieTitles = topRatedMovies.slice(0, 10).map(movie => movie.title);
     for (i = 0; i < movieTitles.length; i++) {
+        console.log(movieTitles);
         const topRatedListItem = document.createElement('li');
         li.appendChild(topRatedListItem);
         topRatedListItem.innerHTML = movieTitles[i];
