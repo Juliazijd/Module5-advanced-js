@@ -5,6 +5,7 @@ const getData = async apiURL => {
 		const res = await fetch(apiURL, {
 			method: "GET",
 		});
+		console.log(res);
 		const json = await res.json();
 		return json;
 	} catch (error) {

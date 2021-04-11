@@ -1,0 +1,41 @@
+body {
+  background: rgb(83, 83, 141);
+  color: white;
+  font-family: "Courier New", Courier, monospace;
+  font-weight: 500;
+  text-align: center;
+}
+menu {
+  padding: 20px;
+}
+button,
+input {
+  margin: 10px;
+  border-radius: 5px;
+  font-family: "Courier New", Courier, monospace;
+  font-weight: 600;
+}
+#search-input {
+  width: 200px;
+}
+p {
+  display: block;
+  margin: 0 auto;
+  padding: 30px;
+  width: 300px;
+  text-align: center;
+}
+img {
+  border-radius: 10px;
+  margin: 40px;
+}
+div img {
+  padding: 20px;
+  box-shadow: 3px 2px 4px 5px rgb(0, 0, 0, 0.3);
+}
+.phil-image {
+  display: block;
+  margin: 0 auto;
+  height: 300px;
+  width: 500px;
+}
