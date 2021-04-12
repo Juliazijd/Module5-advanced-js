@@ -47,21 +47,20 @@ const getJokesBySearch = search => {
 const handleSearch = event => {
 	event.preventDefault();
 	let searchInput = document.querySelector('#search-input');
-	return getJokesBySearch(searchInput.value);
+	return getJokesBySearch(searchInput.value).then(displayDadJokeBySearch);
 }
 const displayDadJokeBySearch = data => {
-	console.log(data.results);
-	//document.querySelector('#dad-joke-line').innerHTML = data.results[0];
-}
-
-//const searchButton = document.querySelector("form")
-//	searchButton.addEventListener("submit", () => {
-//		console.log(handleSearch())
-//					});
-
+	let jokes = data.results;
+	console.log(jokes);
+	const div = document.getElementsByTagName('div')[0];
+	div.innerHTML = ' ';
+		for (i = 0; i < jokes.length; i++) {
+			const p = document.createElement('p');
+			div.appendChild(p);
+			p.innerHTML = jokes[i].joke;
+		}
+};
 const searchButton = document.querySelector('#input-form');
 searchButton.addEventListener('submit', handleSearch);
-//searchButton.addEventListener('submit', () => {
-//	handleSearch().then(displayDadJokeBySearch);
-//		});
+
 
