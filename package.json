@@ -1,0 +1,21 @@
+{
+  "name": "Module_5-clone",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Juliazijd/Module5-advanced-js.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Juliazijd/Module5-advanced-js/issues"
+  },
+  "homepage": "https://github.com/Juliazijd/Module5-advanced-js#readme"
+}
+

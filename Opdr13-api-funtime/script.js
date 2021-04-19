@@ -63,4 +63,12 @@ const displayDadJokeBySearch = data => {
 const searchButton = document.querySelector('#input-form');
 searchButton.addEventListener('submit', handleSearch);
 
-
+  function createUser () {
+    const user = { 
+      firstName: 'Brad' 
+    };
+    user['lastName'] = 'Traversy';
+	console.log(user);
+    return user;
+  }
+ createUser();
